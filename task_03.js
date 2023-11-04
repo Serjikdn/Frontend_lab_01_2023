@@ -5,8 +5,8 @@ function start() {
     showDate();
 }
 
-function getDate(userDate) {
-
+function getDate() {
+    let userDate = prompt("Enter the date (YYYY-MM-DD):");
     userDate = new Date(userDate);
     // День перед заданою датою
     let dayBefore = new Date(userDate);
@@ -19,8 +19,7 @@ function getDate(userDate) {
 }
 
 function showDate() {
-    let userDate = prompt("Enter the date (YYYY-MM-DD):");
-    let result = getDate(userDate);
+    let result = getDate();
     let [sourceDate, dayBefore, dayAfter] = getDate(userDate);
 
     alert(`Source day: ${sourceDate.toLocaleDateString()}\nday before: ${dayBefore.toLocaleDateString()}\nday after: ${dayAfter.toLocaleDateString()}`);
