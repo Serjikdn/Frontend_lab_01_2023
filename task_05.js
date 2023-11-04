@@ -6,13 +6,30 @@ function start() {
 }
 
 function drawStar() {
-    let rows = 8
-    for (let i = 1; i <= rows; i++) {
-        let star = '';
-        for (let j = 1; j <= i; j++) {
-            star += '*';
+    const size = 15; // Розмір символу "+"
+    let plus = '';
+    let half = Math.floor(size / 2)
+
+    for (let i = 1; i < size - 1; i++) {
+        let row = '';
+        for (let j = 0; j < size; j++) {
+            if (i === half || j === half) {
+                row += '*';
+            } else {
+                row += ' ';
+            }
+            if (i === j + 1 || i + j === size - 1) {
+                row += '*';
+            } else {
+                row += ' ';
+            }
         }
-        console.log(star);
+        plus += row + '\n';
+
     }
+
+    console.log(plus);
+
 }
+
 
