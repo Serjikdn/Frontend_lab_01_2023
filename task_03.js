@@ -2,22 +2,29 @@ let myClick = document.querySelector('button');
 myClick.addEventListener('click', start)
 
 function start() {
-    getDate();
+    showDate();
 }
 
-function getDate() {
-    let userDate = prompt("Enter the date (YYYY-MM-DD):");
+function getDate(userDate) {
+
     userDate = new Date(userDate);
     // День перед заданою датою
     let dayBefore = new Date(userDate);
     dayBefore.setDate(userDate.getDate() - 1);
 
-// День після заданої дати
+    // День після заданої дати
     let dayAfter = new Date(userDate);
     dayAfter.setDate(userDate.getDate() + 1);
-    alert(`Source day: ${userDate.toLocaleDateString()}\nday before: ${dayBefore.toLocaleDateString()}\nday after: ${dayAfter.toLocaleDateString()}`);
+    return [userDate, dayBefore, dayAfter]
+}
 
-    taskResult.innerHTML = `Source day: ${userDate.toLocaleDateString()}<br>
+function showDate() {
+    let userDate = prompt("Enter the date (YYYY-MM-DD):");
+    let result = getDate(userDate);
+    let [sourceDate, dayBefore, dayAfter] = getDate(userDate);
+
+    alert(`Source day: ${sourceDate.toLocaleDateString()}\nday before: ${dayBefore.toLocaleDateString()}\nday after: ${dayAfter.toLocaleDateString()}`);
+    taskResult.innerHTML = `Source day: ${sourceDate.toLocaleDateString()}<br>
                             day before: ${dayBefore.toLocaleDateString()}<br>
                             day after: ${dayAfter.toLocaleDateString()}`
 }
