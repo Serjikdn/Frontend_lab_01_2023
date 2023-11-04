@@ -19,8 +19,7 @@ function getDate() {
 }
 
 function showDate() {
-    let result = getDate();
-    let [sourceDate, dayBefore, dayAfter] = getDate(userDate);
+    let [sourceDate, dayBefore, dayAfter] = getDate();
 
     alert(`Source day: ${sourceDate.toLocaleDateString()}\nday before: ${dayBefore.toLocaleDateString()}\nday after: ${dayAfter.toLocaleDateString()}`);
     taskResult.innerHTML = `Source day: ${sourceDate.toLocaleDateString()}<br>
