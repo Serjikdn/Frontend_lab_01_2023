@@ -6,11 +6,18 @@ function start() {
 }
 
 function getDate() {
-    let userDate = +prompt("Enter the date (YYYY-MM-DD):");
-    let date = new Date(userDate);
-    let yesterday = date.getDay() - 1;
-    let tomorrow = date.getDay() + 1;
-    alert('Result: ' + yesterday + tomorrow);
+    let userDate = prompt("Enter the date (YYYY-MM-DD):");
+    userDate = new Date(userDate);
+    // День перед заданою датою
+    let dayBefore = new Date(userDate);
+    dayBefore.setDate(userDate.getDate() - 1);
 
-    taskResult.innerHTML = `User number: ${userDate}<br> result: ${result}`
+// День після заданої дати
+    let dayAfter = new Date(userDate);
+    dayAfter.setDate(userDate.getDate() + 1);
+    alert(`Source day: ${userDate.toLocaleDateString()}\nday before: ${dayBefore.toLocaleDateString()}\nday after: ${dayAfter.toLocaleDateString()}`);
+
+    taskResult.innerHTML = `Source day: ${userDate.toLocaleDateString()}<br>
+                            day before: ${dayBefore.toLocaleDateString()}<br>
+                            day after: ${dayAfter.toLocaleDateString()}`
 }
