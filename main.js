@@ -20,7 +20,7 @@ setInterval(assignValue, 40000);
 
 let taskResult = document.querySelector('#taskResult');
 
-// Отримуємо всі елементи з класом "tag"
+// Отримуємо всі елементи з класом "section div a"
 const taskList = document.querySelectorAll('section div a');
 const windowTask = document.querySelector('iframe');
 
