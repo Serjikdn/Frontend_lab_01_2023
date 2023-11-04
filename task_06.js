@@ -26,4 +26,5 @@ function calcSum() {
 function showSum() {
     let result = calcSum()
     alert(`Sum of numbers: ${result[1]}\nEqual ${result[0]}`)
+    taskResult.innerHTML = `Sum of numbers: ${result[1]}<br>Equal ${result[0]}`;
 }
