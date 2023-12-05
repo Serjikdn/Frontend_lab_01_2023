@@ -43,7 +43,7 @@ function getAgeString() {
 }
 
 function showAgeString() {
-    result = getAgeString();
+    let result = getAgeString();
     alert(result);
     taskResult.innerHTML = result;
 }

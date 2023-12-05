@@ -2,7 +2,7 @@ const myClick = document.querySelector('button');
 myClick.addEventListener('click', start)
 
 function start() {
- changeLastNumber ();
+    changeLastNumber();
 }
 
 function changeLastNumber() {
@@ -11,6 +11,5 @@ function changeLastNumber() {
     let number = Math.floor(userNumber / 10);
     let result = lastDigit * Math.pow(10, Math.floor(Math.log10(number) + 1)) + number;
     alert('Result: ' + result);
-
     taskResult.innerHTML = `User number: ${userNumber}<br> result: ${result}`
 }

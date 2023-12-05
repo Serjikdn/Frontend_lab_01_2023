@@ -15,7 +15,7 @@ function calcSum() {
             alert('Not is number!')
             continue
         }
-        if (input === 0){
+        if (input === 0) {
             return [sum, inputList]
         }
         inputList.push(input)

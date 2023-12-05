@@ -25,11 +25,9 @@ function drawStar() {
             }
         }
         plus += row + '\n';
-
     }
 
     console.log(plus);
-
 }
 
 
